@@ -24,5 +24,9 @@
         "psr-4": {
             "Dhii\\Modular\\Module\\": "src"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
     }
 }
