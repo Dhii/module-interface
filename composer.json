@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3 | ^7.0"
+        "php": "^5.3 | ^7.0",
+        "dhii/data-key-value-aware-interface": "^0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -23,5 +24,9 @@
         "psr-4": {
             "Dhii\\Modular\\Module\\": "src"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
     }
 }
