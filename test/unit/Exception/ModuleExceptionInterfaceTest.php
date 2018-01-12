@@ -29,8 +29,16 @@ class ModuleExceptionInterfaceTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
+            ->getMessage()
+            ->getCode()
+            ->getPrevious()
+            ->getFile()
+            ->getLine()
+            ->getTrace()
+            ->getTraceAsString()
+            ->__toString()
+
             ->getModule()
-            ->getModuleKey()
             ->new();
 
         return $mock;
@@ -53,11 +61,6 @@ class ModuleExceptionInterfaceTest extends TestCase
 
         $this->assertInstanceOf(
             'Dhii\Modular\Module\ModuleAwareInterface',
-            $subject,
-            'Subject does not implement required interface'
-        );
-        $this->assertInstanceOf(
-            'Dhii\Modular\Module\ModuleKeyAwareInterface',
             $subject,
             'Subject does not implement required interface'
         );
