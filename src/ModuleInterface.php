@@ -18,11 +18,9 @@ interface ModuleInterface extends KeyAwareInterface
     /**
      * Performs module-specific setup and optionally provides a container.
      *
-     * This method should be invoked when the application is setting up the modules in the early stages of
-     * initialization. Therefore, this method can safely assume that _some_ other modules have been `setup()`, but
-     * _none_ of them have been `run()`. If required, the module can return services in a container, for consumption
-     * by the application. However, this is depends on the application, and as such there is no guarantee that the
-     * container will actually be utilized.
+     * This method SHOULD be used to allow the module to set up and prepare itself for invocation.
+     * If required, the module MAY provide services in a container However, the usage of this container is dependent on
+     * the consumer and as such there is no guarantee that the container will actually be utilized.
      *
      * @since [*next-version*]
      *
@@ -33,10 +31,10 @@ interface ModuleInterface extends KeyAwareInterface
     /**
      * Runs the module.
      *
-     * This method should be invoked when the application has been initialized and all modules have been set up.
-     * Therefore, this method can safely assume that _all_ other modules have been `setup()`, but _not all_ of them have
-     * been `run()`. Additionally, the container given to this method is not necessarily the same container returned
-     * by the instance's `setup()` method. In fact, it is strongly advised to not assume so.
+     * This method MUST be called when the module has been set up and is ready for invocation.
+     * A service container MAY be given to this method, which MAY consume its services. This container is not
+     * necessarily the same container returned by the instance's `setup()` method. In fact, it is strongly advised to
+     * assume that it is not.
      *
      * @since [*next-version*]
      *
