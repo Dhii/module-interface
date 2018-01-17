@@ -30,7 +30,8 @@ class ModuleInterfaceTest extends TestCase
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->getKey()
-            ->load()
+            ->setup()
+            ->run()
             ->new();
 
         return $mock;
