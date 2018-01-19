@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9576fa121aae401afa861da04286665d",
+    "content-hash": "3518d07f4a301994b9a48b5d57367c58",
     "packages": [
         {
             "name": "dhii/data-key-value-aware-interface",
