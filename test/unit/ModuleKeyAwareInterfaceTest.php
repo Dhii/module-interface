@@ -2,11 +2,11 @@
 
 namespace Dhii\Modular\UnitTest\Module;
 
-use Dhii\Modular\Module\ModuleKeyAwareInterface;
+use Dhii\Modular\Module\ModuleKeyAwareInterface as TestSubject;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Modular\Module\ModuleKeyAwareInterface}.
+ * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
@@ -17,14 +17,14 @@ class ModuleKeyAwareInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleKeyAwareInterface';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\ModuleKeyAwareInterface';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return ModuleKeyAwareInterface
+     * @return TestSubject
      */
     public function createInstance()
     {

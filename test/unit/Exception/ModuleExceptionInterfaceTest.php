@@ -1,12 +1,12 @@
 <?php
 
-namespace Dhii\Modular\UnitTest\Module;
+namespace Dhii\Modular\UnitTest\Exception;
 
-use Dhii\Modular\Module\ModuleExceptionInterface;
+use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Modular\Module\ModuleExceptionInterface}.
+ * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
@@ -17,20 +17,28 @@ class ModuleExceptionInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleExceptionInterface';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\Exception\ModuleExceptionInterface';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return ModuleExceptionInterface
+     * @return TestSubject
      */
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
+            ->getMessage()
+            ->getCode()
+            ->getPrevious()
+            ->getFile()
+            ->getLine()
+            ->getTrace()
+            ->getTraceAsString()
+            ->__toString()
+
             ->getModule()
-            ->getModuleKey()
             ->new();
 
         return $mock;
@@ -52,12 +60,7 @@ class ModuleExceptionInterfaceTest extends TestCase
         );
 
         $this->assertInstanceOf(
-            'Dhii\\Modular\\Module\\ModuleAwareInterface',
-            $subject,
-            'Subject does not implement required interface'
-        );
-        $this->assertInstanceOf(
-            'Dhii\\Modular\\Module\\ModuleKeyAwareInterface',
+            'Dhii\Modular\Module\ModuleAwareInterface',
             $subject,
             'Subject does not implement required interface'
         );
