@@ -2,11 +2,11 @@
 
 namespace Dhii\Modular\UnitTest\Module;
 
-use Dhii\Modular\Module\ModuleInterface;
+use Dhii\Modular\Module\ModuleInterface as TestSubject;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Modular\Module\ModuleInterface}.
+ * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
@@ -17,14 +17,14 @@ class ModuleInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleInterface';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\ModuleInterface';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return ModuleInterface
+     * @return TestSubject
      */
     public function createInstance()
     {
@@ -52,7 +52,7 @@ class ModuleInterfaceTest extends TestCase
         );
 
         $this->assertInstanceOf(
-            'Dhii\\Data\\KeyAwareInterface',
+            'Dhii\Data\KeyAwareInterface',
             $subject,
             'Subject does not implement a required interface'
         );

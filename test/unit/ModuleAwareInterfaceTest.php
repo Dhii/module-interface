@@ -2,11 +2,11 @@
 
 namespace Dhii\Modular\UnitTest\Module;
 
-use Dhii\Modular\Module\ModuleAwareInterface;
+use Dhii\Modular\Module\ModuleAwareInterface as TestSubject;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Modular\Module\ModuleAwareInterface}.
+ * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
@@ -17,14 +17,14 @@ class ModuleAwareInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Modular\\Module\\ModuleAwareInterface';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\ModuleAwareInterface';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return ModuleAwareInterface
+     * @return TestSubject
      */
     public function createInstance()
     {
