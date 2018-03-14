@@ -2,6 +2,8 @@
 
 namespace Dhii\Modular\Module;
 
+use Dhii\Util\String\StringableInterface as Stringable;
+
 /**
  * Something that can have a module key retrieved.
  *
@@ -14,7 +16,7 @@ interface ModuleKeyAwareInterface
      *
      * @since [*next-version*]
      *
-     * @return string|null The key, if applicable; otherwise, null.
+     * @return string|Stringable|null The key, if applicable; otherwise, null.
      */
     public function getModuleKey();
 }
