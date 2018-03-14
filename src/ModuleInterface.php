@@ -3,6 +3,7 @@
 namespace Dhii\Modular\Module;
 
 use Dhii\Data\KeyAwareInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Anything that represents a system module.
@@ -15,11 +16,29 @@ use Dhii\Data\KeyAwareInterface;
 interface ModuleInterface extends KeyAwareInterface
 {
     /**
-     * Performs module-specific loading procedures.
+     * Performs module-specific setup and optionally provides a container.
      *
-     * May result in no actions taking place at all.
+     * This method SHOULD be used to allow the module to set up and prepare itself for invocation.
+     * If required, the module MAY provide services in a container However, the usage of this container is dependent on
+     * the consumer and as such there is no guarantee that the container will actually be utilized.
      *
      * @since [*next-version*]
+     *
+     * @return ContainerInterface|null A container instance, if any.
      */
-    public function load();
+    public function setup();
+
+    /**
+     * Runs the module.
+     *
+     * This method MUST be called when the module has been set up and is ready for invocation.
+     * A service container MAY be given to this method, which MAY consume its services. This container is not
+     * necessarily the same container returned by the instance's `setup()` method. In fact, it is strongly advised to
+     * assume that it is not.
+     *
+     * @since [*next-version*]
+     *
+     * @param ContainerInterface|null $c Optional DI container instance.
+     */
+    public function run(ContainerInterface $c = null);
 }

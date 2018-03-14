@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\UnitTest\Module;
+namespace Dhii\Modular\Module\UnitTest;
 
-use Dhii\Modular\Module\ModuleInterface as TestSubject;
+use Dhii\Modular\Module\DependenciesAwareInterface as TestSubject;
 use Xpmock\TestCase;
 
 /**
@@ -10,14 +10,14 @@ use Xpmock\TestCase;
  *
  * @since [*next-version*]
  */
-class ModuleInterfaceTest extends TestCase
+class DependenciesAwareInterfaceTest extends TestCase
 {
     /**
-     * The name of the test subject.
+     * The class name of the test subject.
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\ModuleInterface';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\DependenciesAwareInterface';
 
     /**
      * Creates a new instance of the test subject.
@@ -29,12 +29,9 @@ class ModuleInterfaceTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getKey()
-            ->setup()
-            ->run()
-            ->new();
+                     ->getDependencies();
 
-        return $mock;
+        return $mock->new();
     }
 
     /**
@@ -49,13 +46,7 @@ class ModuleInterfaceTest extends TestCase
         $this->assertInstanceOf(
             static::TEST_SUBJECT_CLASSNAME,
             $subject,
-            'A valid instance of the test subject could not be created'
-        );
-
-        $this->assertInstanceOf(
-            'Dhii\Data\KeyAwareInterface',
-            $subject,
-            'Subject does not implement a required interface'
+            'A valid instance of the test subject could not be created.'
         );
     }
 }
