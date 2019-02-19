@@ -3,6 +3,7 @@
 namespace Dhii\Modular\Module;
 
 use Dhii\Data\KeyAwareInterface;
+use Dhii\Modular\Module\Exception\ModuleExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -25,6 +26,8 @@ interface ModuleInterface extends KeyAwareInterface
      * @since [*next-version*]
      *
      * @return ContainerInterface|null A DI container instance, if any.
+     *
+     * @throws ModuleExceptionInterface If could not setup.
      */
     public function setup();
 
@@ -39,6 +42,8 @@ interface ModuleInterface extends KeyAwareInterface
      * @since [*next-version*]
      *
      * @param ContainerInterface|null $c Optional DI container instance.
+     *
+     * @throws ModuleExceptionInterface If could not run.
      */
     public function run(ContainerInterface $c = null);
 }
