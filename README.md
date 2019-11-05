@@ -20,9 +20,9 @@ to add or override services. Nevertheless, implementations MUST NOT assume that 
 the same container returned from `setup()`.
 
 ### Requirements
-This package officially supports PHP 5.3 until PHP 7.3. Theoretically, it should work on higher versions of PHP just
-the same, at the very least until PHP 8. However, it does not appear possible to build on PHP 5.3 and 7.4 at the same
-time, because there seems to be no distro which has both of those in its toolchain.
+- PHP: <= 7.0 | < 7.4
+
+    Officially supports at least up to php 7.3.x. Should be compatible with PHP 7.x.
 
 
 [Dhii]: https://github.com/Dhii/dhii
