@@ -7,5 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.1] - 2019-11-05
 Stable release
 
+### Fixed
+- Modules are now allowed to throw specialized exceptions.
+
 ## [0.1-alpha1] - 2018-05-07
 Initial version.
