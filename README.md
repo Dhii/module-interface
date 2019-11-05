@@ -19,6 +19,11 @@ their own services SHOULD therefore rely only on what is provided to `run()`, wh
 to add or override services. Nevertheless, implementations MUST NOT assume that the container received by `run()` is
 the same container returned from `setup()`.
 
+### Requirements
+This package officially supports PHP 5.3 until PHP 7.3. Theoretically, it should work on higher versions of PHP just
+the same, at the very least until PHP 8. However, it does not appear possible to build on PHP 5.3 and 7.4 at the same
+time, because there seems to be no distro which has both of those in its toolchain.
+
 
 [Dhii]: https://github.com/Dhii/dhii
 
