@@ -2,48 +2,51 @@
 
 namespace Dhii\Modular\Module;
 
-use Dhii\Data\KeyAwareInterface;
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface;
+use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- * Anything that represents a system module.
- *
- * A module is represented by an key, which is not limited to any type or form. It can be numeric, a slug, a hash or
- * even a user-friendly name. What matters is that it **uniquely** identifies the module.
+ * Something that represents an application module.
  *
  * @since [*next-version*]
  */
-interface ModuleInterface extends KeyAwareInterface
+interface ModuleInterface
 {
     /**
-     * Performs module-specific setup and optionally provides a container.
+     * Performs module-specific setup and provides a service provider.
      *
-     * This method SHOULD be used to allow the module to set up and prepare itself for invocation.
-     * If required, the module MAY provide services in a container. However, the usage of this container is dependent on
-     * the consumer and as such there is no guarantee that the container will actually be utilized.
+     * This method SHOULD be called at least once before {@link ModuleInterface::run()} may be invoked for a particular
+     * module instance. The returned service provider instance SHOULD be incorporated by the application into the
+     * container instance that is then given to this module's {@link ModuleInterface::run()} method.
+     *
+     * The application MAY also incorporate the service provider into the container instance given to other modules,
+     * but this is not required. As such, services factories in the returned service provider should not assume the
+     * existence of other module's services. Use proxy services together with {@link ContainerInterface::has()} for
+     * optionally integrating with other modules.
      *
      * @since [*next-version*]
      *
-     * @return ContainerInterface|null A DI container instance, if any.
+     * @return ServiceProviderInterface A service provider instance for this module's services.
      *
-     * @throws ModuleExceptionInterface If could not setup.
+     * @throws ModuleExceptionInterface If module setup failed and/or a service provider instance could not be returned.
      */
     public function setup();
 
     /**
      * Runs the module.
      *
-     * This method MUST be called when the module has been set up and is ready for invocation.
-     * A service container MAY be given to this method, which MAY consume its services. This container is not
-     * necessarily the same container returned by the instance's `setup()` method. In fact, it is strongly advised to
-     * assume that this is not the case.
+     * This method MUST be called after the module has been set up using {@link ModuleInterface::setup()}. A services
+     * container MUST be given to this method, and MUST incorporate the services from the service provider returned
+     * by the same module's {@link ModuleInterface::setup()} method. This container instance is not guaranteed to be
+     * the same instance given to other modules. As such, it is strongly advised to assume it is not, and to avoid
+     * referencing services from other modules.
      *
      * @since [*next-version*]
      *
-     * @param ContainerInterface|null $c Optional DI container instance.
+     * @param ContainerInterface $c A services container instance.
      *
-     * @throws ModuleExceptionInterface If could not run.
+     * @throws ModuleExceptionInterface If the module failed to run.
      */
-    public function run(ContainerInterface $c = null);
+    public function run(ContainerInterface $c);
 }

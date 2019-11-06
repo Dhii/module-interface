@@ -29,7 +29,6 @@ class ModuleInterfaceTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getKey()
             ->setup()
             ->run()
             ->new();
@@ -50,12 +49,6 @@ class ModuleInterfaceTest extends TestCase
             static::TEST_SUBJECT_CLASSNAME,
             $subject,
             'A valid instance of the test subject could not be created'
-        );
-
-        $this->assertInstanceOf(
-            'Dhii\Data\KeyAwareInterface',
-            $subject,
-            'Subject does not implement a required interface'
         );
     }
 }
