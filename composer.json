@@ -29,7 +29,8 @@
     "autoload-dev": {
         "psr-4": {
             "Dhii\\Modular\\Module\\UnitTest\\": "test/unit",
-            "Dhii\\Modular\\Module\\FuncTest\\": "test/functional"
+            "Dhii\\Modular\\Module\\FuncTest\\": "test/functional",
+            "Dhii\\Modular\\Module\\Test\\": "test/stubs"
         }
     },
     "scripts": {

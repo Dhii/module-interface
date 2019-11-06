@@ -3,6 +3,7 @@
 namespace Dhii\Modular\UnitTest\Exception;
 
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
+use Dhii\Modular\Module\Test\GetImplementingMockBuilderCapableTrait;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -13,6 +14,8 @@ use PHPUnit\Framework\TestCase;
  */
 class ModuleExceptionInterfaceTest extends TestCase
 {
+    use GetImplementingMockBuilderCapableTrait;
+
     /**
      * Creates a new instance of the test subject.
      *
@@ -22,7 +25,8 @@ class ModuleExceptionInterfaceTest extends TestCase
      */
     public function createInstance()
     {
-        $mock = $this->getMockBuilder(TestSubject::class)
+        $mock = $this->getImplementingMockBuilder('Exception', [TestSubject::class])
+            ->setMethods([])
             ->getMock();
 
         return $mock;
