@@ -3,7 +3,7 @@
 namespace Dhii\Modular\Module\Exception;
 
 use Dhii\Modular\Module\ModuleAwareInterface;
-use Dhii\Exception\ThrowableInterface;
+use Throwable;
 
 /**
  * Represents an exception that is thrown in relation to a module.
@@ -11,7 +11,7 @@ use Dhii\Exception\ThrowableInterface;
  * @since [*next-version*]
  */
 interface ModuleExceptionInterface extends
-    ThrowableInterface,
+    Throwable,
     ModuleAwareInterface
 {
 }
