@@ -12,7 +12,7 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3 | ^7.0",
+        "php": "^7.0",
         "dhii/exception-interface": "^0.1 | ^0.2"
     },
     "require-dev": {
