@@ -31,7 +31,7 @@ interface ModuleInterface
      *
      * @throws ModuleExceptionInterface If module setup failed and/or a service provider instance could not be returned.
      */
-    public function setup();
+    public function setup() : ServiceProviderInterface;
 
     /**
      * Runs the module.
