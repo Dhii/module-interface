@@ -10,7 +10,7 @@
 This package contains interfaces that are useful in describing modules and their attributes and behaviour.
 
 ### Interfaces
-- [`ModuleInterface`][ModuleInterface] - The interface for a module. A module is an object that represents an
+- [`ModuleInterface`][] - The interface for a module. A module is an object that represents an
 application fragment. Modules are prepared using `setup()`, which returns a `ServiceProviderInterface` instance that
 the application may consume, and invoked using `run()`.
 
@@ -22,4 +22,4 @@ the application may consume, and invoked using `run()`.
 
 [Dhii]: https://github.com/Dhii/dhii
 
-[ModuleInterface]: src/ModuleInterface.php
+[`ModuleInterface`]: src/ModuleInterface.php
