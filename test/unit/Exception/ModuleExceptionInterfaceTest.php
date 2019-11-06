@@ -5,7 +5,6 @@ namespace Dhii\Modular\UnitTest\Exception;
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit\Framework\TestCase;
-use Xpmock\TestCaseTrait;
 
 /**
  * Tests {@see TestSubject}.
@@ -14,8 +13,6 @@ use Xpmock\TestCaseTrait;
  */
 class ModuleExceptionInterfaceTest extends TestCase
 {
-    use TestCaseTrait;
-
     /**
      * Creates a new instance of the test subject.
      *
