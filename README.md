@@ -13,6 +13,9 @@ This package contains interfaces that are useful in describing modules and their
 - [`ModuleInterface`][] - The interface for a module. A module is an object that represents an
 application fragment. Modules are prepared using `setup()`, which returns a `ServiceProviderInterface` instance that
 the application may consume, and invoked using `run()`.
+- [`FactoryInterface`][] - The interface for a service factory. Implementations of this interface can be used instead
+of anonymous functions when defining service providers. Implementations can provide generic service definition logic,
+reducing code repetition, as well as allow for static analysis on modules by exposing the keys of dependent services.
 
 ### Requirements
 - PHP: <= 7.0 | < 7.4
@@ -23,3 +26,4 @@ the application may consume, and invoked using `run()`.
 [Dhii]: https://github.com/Dhii/dhii
 
 [`ModuleInterface`]: src/ModuleInterface.php
+[`FactoryInterface`]: src/FactoryInterface.php
