@@ -2,7 +2,8 @@
 
 namespace Dhii\Modular\Module;
 
-use Dhii\Modular\Module\Exception\ModuleExceptionInterface;
+use Dhii\Modular\Module\Exception\ModuleRunException;
+use Dhii\Modular\Module\Exception\ModuleSetupException;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
@@ -29,7 +30,7 @@ interface ModuleInterface
      *
      * @return ServiceProviderInterface A service provider instance for this module's services.
      *
-     * @throws ModuleExceptionInterface If module setup failed and/or a service provider instance could not be returned.
+     * @throws ModuleSetupException If module setup failed and/or a service provider instance could not be returned.
      */
     public function setup() : ServiceProviderInterface;
 
@@ -46,7 +47,7 @@ interface ModuleInterface
      *
      * @param ContainerInterface $c A services container instance.
      *
-     * @throws ModuleExceptionInterface If the module failed to run.
+     * @throws ModuleRunException If the module failed to run.
      */
     public function run(ContainerInterface $c);
 }
