@@ -30,7 +30,7 @@ interface FactoryInterface
      *
      * @return string[] A list of strings each representing the key of a service.
      */
-    public function getDependencies();
+    public function getDependencies() : array;
 
     /**
      * Invokes the factory, creating the service instance or value.

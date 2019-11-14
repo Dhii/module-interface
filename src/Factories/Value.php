@@ -36,7 +36,7 @@ class Value implements FactoryInterface
      *
      * @since [*next-version*]
      */
-    public function getDependencies()
+    public function getDependencies() : array
     {
         return [];
     }
