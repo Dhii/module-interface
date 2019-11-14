@@ -38,4 +38,14 @@ class ValueTest extends TestCase
 
         static::assertSame($value, $subject($container));
     }
+
+    /**
+     * @since [*next-version*]
+     */
+    public function testGetDependencies()
+    {
+        $subject = new TestSubject(0);
+
+        static::assertEmpty($subject->getDependencies());
+    }
 }
