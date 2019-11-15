@@ -27,7 +27,7 @@ class ModuleException extends Exception
      *
      * @param ModuleInterface|null $module The module that erred, if any.
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null, ModuleInterface $module = null)
+    public function __construct($message = '', $code = 0, Throwable $previous = null, ModuleInterface $module = null)
     {
         parent::__construct($message, $code, $previous);
 
