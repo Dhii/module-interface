@@ -2,7 +2,7 @@
 
 namespace Dhii\Modular\Module\UnitTest\Factories;
 
-use Dhii\Modular\Module\Factories\InterpolatedString as TestSubject;
+use Dhii\Modular\Module\Factories\FormatStr as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
@@ -11,7 +11,7 @@ use Psr\Container\ContainerInterface;
 /**
  * @since [*next-version*]
  */
-class InterpolatedStringTest extends TestCase
+class FormatStrTest extends TestCase
 {
     /**
      * @since [*next-version*]
