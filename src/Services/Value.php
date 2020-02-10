@@ -1,12 +1,25 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
 use Dhii\Modular\Module\FactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * A simple factory implementation that returns a static value. Useful for configuration.
+ *
+ * Example usage:
+ *  ```
+ *  [
+ *      'value_a' => new Value(2),
+ *      'value_b' => new Value('hello'),
+ *      'value_c' => new Value($someVar),
+ *  ]
+ *
+ *  $c->get('value_a'); // 2
+ *  $c->get('value_b'); // 'hello'
+ *  $c->get('value_c'); // value of $someVar
+ *  ```
  *
  * @since [*next-version*]
  */

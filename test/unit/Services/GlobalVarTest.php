@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Factories;
+namespace Dhii\Modular\Module\UnitTest\Services;
 
-use Dhii\Modular\Module\Factories\GlobalVar as TestSubject;
+use Dhii\Modular\Module\Services\GlobalVar as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;

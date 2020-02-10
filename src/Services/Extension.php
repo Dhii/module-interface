@@ -1,10 +1,11 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
+use Dhii\Modular\Module\ExtensionInterface;
 use Psr\Container\ContainerInterface;
 
-class Extension extends AbstractFactory
+class Extension extends AbstractService implements ExtensionInterface
 {
     /**
      * @since [*next-version*]
@@ -37,8 +38,7 @@ class Extension extends AbstractFactory
      */
     public function __invoke(ContainerInterface $c, $prev = null)
     {
-        $deps = array_map([$c, 'get'], $this->dependencies);
-        $args = array_merge([$prev], $deps);
+        $args = array_merge([$prev], $this->resolveDependencies($c));
 
         return call_user_func_array($this->factoryFn, $args);
     }

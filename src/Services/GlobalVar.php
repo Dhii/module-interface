@@ -1,12 +1,24 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
 use Dhii\Modular\Module\FactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * A service factory for referencing global variables.
+ *
+ * Example usage:
+ *  ```
+ *  global $var;
+ *  $var = 5;
+ *
+ *  [
+ *      'service_a' => new GlobalVar('var')
+ *  ]
+ *
+ *  $c->get('service_a'); // 5
+ *  ```
  *
  * @since [*next-version*]
  */

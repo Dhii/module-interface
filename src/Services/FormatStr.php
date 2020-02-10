@@ -1,31 +1,28 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
+use Dhii\Modular\Module\FactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * A factory for string values. Supports interpolation with dependent service values.
  *
  * Example usage:
- *
- * ```
- * // Simple example
- * new FormatStr('Hello world');
- *
- * // Numeric dependencies example
- * new FormatStr('User name is: {0}', ['user_name_service']);
- *
- * // Associative dependencies example
- * new FormatStr('{day} {month}', [
- *     'day'   => 'date/day',
- *     'month' => 'date/month',
- * ]);
- * ```
+ *  ```
+ *  [
+ *      'service_a' => new FormatStr('John Smith'),
+ *      'service_b' => new FormatStr('User name is: {0}', ['service_a']),
+ *      'service_c' => new FormatStr('{day} {month}', [
+ *          'day'   => 'date/day',
+ *          'month' => 'date/month',
+ *      ]),
+ *  ]
+ *  ```
  *
  * @since [*next-version*]
  */
-class FormatStr extends AbstractFactory
+class FormatStr extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]

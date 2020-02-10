@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Factories;
+namespace Dhii\Modular\Module\UnitTest\Services;
 
-use Dhii\Modular\Module\Factories\Callback as TestSubject;
+use Dhii\Modular\Module\Services\Invocable as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
 use Dhii\Modular\Module\Test\CallbackInterface;
 use PHPUnit\Framework\TestCase;
@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
 /**
  * @since [*next-version*]
  */
-class CallbackTest extends TestCase
+class InvocableTest extends TestCase
 {
     /**
      * @since [*next-version*]

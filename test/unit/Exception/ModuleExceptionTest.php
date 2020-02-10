@@ -28,6 +28,8 @@ class ModuleExceptionTest extends TestCase
 
     /**
      * @since [*next-version*]
+     *
+     * @throws TestSubject
      */
     public function testCanBeThrown()
     {

@@ -1,15 +1,33 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
+use Dhii\Modular\Module\FactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * A standard service factory implementation.
  *
+ * Example usage:
+ *  ```
+ *  [
+ *      'service_a' => new Factory([], function () {
+ *          return 'hello';
+ *      }),
+ *      'service_b' => new Factory([], function () {
+ *          return 'world';
+ *      }),
+ *      'service_c' => new Factory(['service_a', 'service_b'], function ($a, $b) {
+ *          return "$a $b";
+ *      }),
+ *  ]
+ *
+ *  $c->get('service_c'); // "hello world"
+ *  ```
+ *
  * @since [*next-version*]
  */
-class Service extends AbstractFactory
+class Factory extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]
@@ -41,6 +59,6 @@ class Service extends AbstractFactory
      */
     public function __invoke(ContainerInterface $c)
     {
-        return call_user_func_array($this->factoryFn, array_map([$c, 'get'], $this->dependencies));
+        return call_user_func_array($this->factoryFn, $this->resolveDependencies($c));
     }
 }

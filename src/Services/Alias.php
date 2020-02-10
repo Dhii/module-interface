@@ -1,12 +1,28 @@
 <?php
 
-namespace Dhii\Modular\Module\Factories;
+namespace Dhii\Modular\Module\Services;
 
 use Dhii\Modular\Module\FactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * A service factory that simply resolves to another existing service, and can optionally default to another factory.
+ *
+ * Example usage:
+ *  ```
+ *  [
+ *      'service_a' => new Alias('service_b'),
+ *      'service_b' => function() {
+ *          return "hello";
+ *      }
+ *      'service_c' => new Alias('service_d', function () {
+ *          return "default";
+ *      }),
+ *  ]
+ *
+ *  $c->get('service_a'); // "hello"
+ *  $c->get('service_c'); // "default"
+ *  ```
  *
  * @since [*next-version*]
  */

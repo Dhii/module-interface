@@ -1,16 +1,17 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Factories;
+namespace Dhii\Modular\Module\UnitTest\Services;
 
-use Dhii\Modular\Module\Factories\AbstractFactory as TestSubject;
+use Dhii\Modular\Module\Services\AbstractService as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
+use Dhii\Modular\Module\ServiceInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
  * @since [*next-version*]
  */
-class AbstractFactoryTest extends TestCase
+class AbstractServiceTest extends TestCase
 {
     /**
      * Creates an instance of the test subject.
@@ -35,7 +36,7 @@ class AbstractFactoryTest extends TestCase
     {
         $subject = $this->createSubject();
 
-        static::assertInstanceOf(FactoryInterface::class, $subject);
+        static::assertInstanceOf(ServiceInterface::class, $subject);
     }
 
     /**

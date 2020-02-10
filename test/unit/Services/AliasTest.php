@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Factories;
+namespace Dhii\Modular\Module\UnitTest\Services;
 
-use Dhii\Modular\Module\Factories\Alias as TestSubject;
+use Dhii\Modular\Module\Services\Alias as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
 use Dhii\Modular\Module\Test\CallbackInterface;
 use PHPUnit\Framework\TestCase;
