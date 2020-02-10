@@ -3,8 +3,8 @@
 namespace Dhii\Modular\UnitTest\Module;
 
 use Dhii\Modular\Module\ModuleInterface as TestSubject;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit\Framework\TestCase;
+use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
  * Tests {@see TestSubject}.
@@ -22,10 +22,7 @@ class ModuleInterfaceTest extends TestCase
      */
     public function createInstance()
     {
-        $mock = $this->getMockBuilder(TestSubject::class)
-            ->getMock();
-
-        return $mock;
+        return $this->getMockBuilder(TestSubject::class)->getMock();
     }
 
     /**
@@ -37,10 +34,6 @@ class ModuleInterfaceTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $this->assertInstanceOf(
-            TestSubject::class,
-            $subject,
-            'A valid instance of the test subject could not be created'
-        );
+        $this->assertInstanceOf(TestSubject::class, $subject);
     }
 }

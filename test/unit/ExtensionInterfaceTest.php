@@ -2,16 +2,17 @@
 
 namespace Dhii\Modular\UnitTest\Module;
 
-use Dhii\Modular\Module\FactoryInterface as TestSubject;
+use Dhii\Modular\Module\ExtensionInterface as TestSubject;
+use Dhii\Modular\Module\ServiceInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
  * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
-class FactoryInterfaceTest extends TestCase
+class ExtensionInterfaceTest extends TestCase
 {
     /**
      * Creates a new instance of the test subject.
@@ -35,5 +36,6 @@ class FactoryInterfaceTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(TestSubject::class, $subject);
+        $this->assertInstanceOf(ServiceInterface::class, $subject);
     }
 }

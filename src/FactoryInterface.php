@@ -5,33 +5,19 @@ namespace Dhii\Modular\Module;
 use Psr\Container\ContainerInterface;
 
 /**
- * Interface for a factory object.
+ * Interface for a module service factory.
  *
- * Objects that implement this interface may be used as service factories and returned by service providers,
- * specifically via {@link Interop\Container\ServiceProviderInterface::getFactories()}.
+ * Services can be obtained from the factory through invocation, which is made possible by the {@link __invoke()} magic
+ * PHP method. The reasoning for this is to make objects that implement this interface also be compatible with DI
+ * container service factories (or "definitions", as they are sometimes referred to).
  *
- * Since objects that implement this interface are recognized by PHP as callable values, due to the {@link __invoke()}
- * magic method, consumers of service providers are unaware of the use of such objects. Implementations will be invoked
- * by the service container to create the service instance or value.
- *
- * The primary uses for factory objects is to:
- * 1. Add dependency information to each factory.
- * 2. Allow implementations to make service definitions more readable.
- * 3. Allow implementations to reduce logical repetitions in service definitions.
+ * This interface may be freely implemented to craft specific types of factories, especially reusable ones. This can
+ * help make long lists of factories more legible as well as help to reduce repeated construction logic.
  *
  * @since [*next-version*]
  */
-interface FactoryInterface
+interface FactoryInterface extends ServiceInterface
 {
-    /**
-     * Retrieves the keys of dependent services.
-     *
-     * @since [*next-version*]
-     *
-     * @return string[] A list of strings each representing the key of a service.
-     */
-    public function getDependencies() : array;
-
     /**
      * Invokes the factory, creating the service instance or value.
      *
@@ -39,7 +25,7 @@ interface FactoryInterface
      *
      * @param ContainerInterface $c The service container.
      *
-     * @return mixed The created service instance or value.
+     * @return mixed The created service value.
      */
     public function __invoke(ContainerInterface $c);
 }
