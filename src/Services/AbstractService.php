@@ -42,6 +42,19 @@ abstract class AbstractService implements ServiceInterface
     }
 
     /**
+     * @inheritDoc
+     *
+     * @since [*next-version*]
+     */
+    public function withDependencies(array $dependencies) : ServiceInterface
+    {
+        $clone = clone $this;
+        $clone->dependencies = $dependencies;
+
+        return $clone;
+    }
+
+    /**
      * Resolves the dependency keys to their corresponding values from a container.
      *
      * @since [*next-version*]

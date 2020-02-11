@@ -23,7 +23,7 @@ use Psr\Container\ContainerInterface;
  *
  * @since [*next-version*]
  */
-class Value implements FactoryInterface
+class Value extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]
@@ -41,17 +41,9 @@ class Value implements FactoryInterface
      */
     public function __construct($value)
     {
-        $this->value = $value;
-    }
+        parent::__construct([]);
 
-    /**
-     * @inheritdoc
-     *
-     * @since [*next-version*]
-     */
-    public function getDependencies() : array
-    {
-        return [];
+        $this->value = $value;
     }
 
     /**

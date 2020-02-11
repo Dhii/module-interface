@@ -26,7 +26,7 @@ use Psr\Container\ContainerInterface;
  *
  * @since [*next-version*]
  */
-class Alias implements FactoryInterface
+class Alias extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]
@@ -53,18 +53,10 @@ class Alias implements FactoryInterface
      */
     public function __construct(string $key, callable $factoryFn = null)
     {
+        parent::__construct([]);
+
         $this->key = $key;
         $this->factoryFn = $factoryFn;
-    }
-
-    /**
-     * @inheritdoc
-     *
-     * @since [*next-version*]
-     */
-    public function getDependencies() : array
-    {
-        return [];
     }
 
     /**

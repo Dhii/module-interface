@@ -22,7 +22,7 @@ use Psr\Container\ContainerInterface;
  *
  * @since [*next-version*]
  */
-class GlobalVar implements FactoryInterface
+class GlobalVar extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]
@@ -40,17 +40,9 @@ class GlobalVar implements FactoryInterface
      */
     public function __construct(string $name)
     {
-        $this->name = $name;
-    }
+        parent::__construct([]);
 
-    /**
-     * @inheritdoc
-     *
-     * @since [*next-version*]
-     */
-    public function getDependencies() : array
-    {
-        return [];
+        $this->name = $name;
     }
 
     /**
