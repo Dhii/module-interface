@@ -45,5 +45,5 @@ interface ModuleInterface
      * @throws ModuleRunException If the module failed to run, such as in the event of a missing service or unsupported
      *                            or unknown environment.
      */
-    public function run(ContainerInterface $c) : void;
+    public function run(ContainerInterface $c);
 }
