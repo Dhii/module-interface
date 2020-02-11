@@ -28,7 +28,7 @@
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
         <log type="json" target="./test/log/logfile.json"/>
         <log type="tap" target="./test/log/logfile.tap"/>
-        <log type="junit" target="./test/log/logfile.xml" logIncompleteSkipped="false"/>
+        <log type="junit" target="./test/log/logfile.xml" showUncoveredFiles="false"/>
         <log type="testdox-html" target="./test/log/testdox.html"/>
         <log type="testdox-text" target="./test/log/testdox.txt"/>
     </logging>

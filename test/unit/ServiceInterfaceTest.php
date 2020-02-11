@@ -2,16 +2,16 @@
 
 namespace Dhii\Modular\UnitTest\Module;
 
-use Dhii\Modular\Module\ModuleInterface as TestSubject;
+use Dhii\Modular\Module\ServiceInterface as TestSubject;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
  * Tests {@see TestSubject}.
  *
  * @since [*next-version*]
  */
-class ModuleInterfaceTest extends TestCase
+class ServiceInterfaceTest extends TestCase
 {
     /**
      * Creates a new instance of the test subject.
