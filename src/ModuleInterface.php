@@ -2,7 +2,6 @@
 
 namespace Dhii\Modular\Module;
 
-use Dhii\Modular\Module\Exception\ModuleRunException;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -41,9 +40,6 @@ interface ModuleInterface
      * @since [*next-version*]
      *
      * @param ContainerInterface $c A services container instance.
-     *
-     * @throws ModuleRunException If the module failed to run, such as in the event of a missing service or unsupported
-     *                            or unknown environment.
      */
     public function run(ContainerInterface $c);
 }
