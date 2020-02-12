@@ -35,7 +35,6 @@ class ExtensionInterfaceTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $this->assertInstanceOf(TestSubject::class, $subject);
         $this->assertInstanceOf(ServiceInterface::class, $subject);
     }
 }
