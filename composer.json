@@ -12,10 +12,12 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.0"
+        "php": "^7.0",
+        "psr/container": "^1.0",
+        "container-interop/service-provider": "^0.4",
+        "dhii/containers": "dev-task/more-containers"
     },
     "require-dev": {
-        "psr/container": "^1.0",
         "phpunit/phpunit": "^6.0 || ^7.0",
         "codeclimate/php-test-reporter": "<=0.3.2"
     },
