@@ -2,7 +2,7 @@
 
 namespace Dhii\Modular\Module\UnitTest\Services;
 
-use Dhii\Modular\Module\Services\Invocable as TestSubject;
+use Dhii\Modular\Module\Services\Func as TestSubject;
 use Dhii\Modular\Module\FactoryInterface;
 use Dhii\Modular\Module\Test\CallbackInterface;
 use PHPUnit\Framework\TestCase;
@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
 /**
  * @since [*next-version*]
  */
-class InvocableTest extends TestCase
+class FuncTest extends TestCase
 {
     /**
      * @since [*next-version*]

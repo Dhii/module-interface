@@ -8,12 +8,11 @@ use Psr\Container\ContainerInterface;
 /**
  * A factory implementation that returns an invocable function.
  *
- * The callback's arguments will be equivalent to any invocation arguments first, followed by the service instances
- * that correspond with the `Invocable` instance's dependency keys, in the order they are given.
+ * The function's arguments will be equivalent to any invocation arguments first, followed by the service instances
+ * that correspond with the `Func` instance's dependency keys, in the order they are given.
  *
- * Those service are fetched only once when the `Invocable` is invoked and the callback is returned, not when the
- * _returned_ callback is invoked. They are then "cached" in the returned
- * callback's scope.
+ * Those service are fetched only once when the `Func` is invoked and the function is returned, not when the
+ * _returned_ function is invoked. They are then "cached" in the returned function's scope.
  *
  * Example usage:
  *  ```
@@ -35,7 +34,7 @@ use Psr\Container\ContainerInterface;
  *
  * @since [*next-version*]
  */
-class Invocable extends AbstractService implements FactoryInterface
+class Func extends AbstractService implements FactoryInterface
 {
     /**
      * @since [*next-version*]
