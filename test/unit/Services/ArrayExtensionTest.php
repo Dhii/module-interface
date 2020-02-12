@@ -1,9 +1,9 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Services;
+namespace Mecha\Modular\UnitTest\Services;
 
-use Dhii\Modular\Module\ExtensionInterface;
-use Dhii\Modular\Module\Services\ArrayExtension as TestSubject;
+use Mecha\Modular\ExtensionInterface;
+use Mecha\Modular\Services\ArrayExtension as TestSubject;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

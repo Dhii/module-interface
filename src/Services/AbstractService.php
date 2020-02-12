@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\Module\Services;
+namespace Mecha\Modular\Services;
 
-use Dhii\Modular\Module\ServiceInterface;
+use Mecha\Modular\ServiceInterface;
 use Psr\Container\ContainerInterface;
 
 /**

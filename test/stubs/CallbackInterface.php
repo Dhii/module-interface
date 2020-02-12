@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\Module\Test;
+namespace Mecha\Modular\Test;
 
 /**
  * Interface used for creating mock callbacks. Useful for setting expectations on callbacks.

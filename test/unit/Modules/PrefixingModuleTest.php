@@ -1,11 +1,11 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Module;
+namespace Mecha\Modular\UnitTest\Modules;
 
-use Dhii\Modular\Module\ExtensionInterface;
-use Dhii\Modular\Module\FactoryInterface;
-use Dhii\Modular\Module\ModuleInterface;
-use Dhii\Modular\Module\Modules\PrefixingModule as TestSubject;
+use Mecha\Modular\ExtensionInterface;
+use Mecha\Modular\FactoryInterface;
+use Mecha\Modular\ModuleInterface;
+use Mecha\Modular\Modules\PrefixingModule as TestSubject;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

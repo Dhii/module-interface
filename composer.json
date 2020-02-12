@@ -23,14 +23,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Dhii\\Modular\\Module\\": "src"
+            "Mecha\\Modular\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dhii\\Modular\\Module\\UnitTest\\": "test/unit",
-            "Dhii\\Modular\\Module\\FuncTest\\": "test/functional",
-            "Dhii\\Modular\\Module\\Test\\": "test/stubs"
+            "Mecha\\Modular\\UnitTest\\": "test/unit",
+            "Mecha\\Modular\\FuncTest\\": "test/functional",
+            "Mecha\\Modular\\Test\\": "test/stubs"
         }
     },
     "scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\Module;
+namespace Mecha\Modular;
 
 use Psr\Container\ContainerInterface;
 

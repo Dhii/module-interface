@@ -1,10 +1,10 @@
 <?php
 
-namespace Dhii\Modular\Module\Modules;
+namespace Mecha\Modular\Modules;
 
 use Dhii\Container\DeprefixingContainer;
-use Dhii\Modular\Module\ModuleInterface;
-use Dhii\Modular\Module\ServiceInterface;
+use Mecha\Modular\ModuleInterface;
+use Mecha\Modular\ServiceInterface;
 use Psr\Container\ContainerInterface;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\Module;
+namespace Mecha\Modular;
 
 /**
  * Interface for something that is modular and can provide its list of modules.

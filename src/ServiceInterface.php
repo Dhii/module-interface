@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\Module;
+namespace Mecha\Modular;
 
 /**
  * Represents a service that is provided by a module.

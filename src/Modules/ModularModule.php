@@ -1,11 +1,11 @@
 <?php
 
-namespace Dhii\Modular\Module\Modules;
+namespace Mecha\Modular\Modules;
 
-use Dhii\Modular\Module\ExtensionInterface;
-use Dhii\Modular\Module\FactoryInterface;
-use Dhii\Modular\Module\ModularInterface;
-use Dhii\Modular\Module\ModuleInterface;
+use Mecha\Modular\ExtensionInterface;
+use Mecha\Modular\FactoryInterface;
+use Mecha\Modular\ModularInterface;
+use Mecha\Modular\ModuleInterface;
 use Psr\Container\ContainerInterface;
 
 /**

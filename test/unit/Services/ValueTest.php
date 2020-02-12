@@ -1,9 +1,9 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Services;
+namespace Mecha\Modular\UnitTest\Services;
 
-use Dhii\Modular\Module\Services\Value as TestSubject;
-use Dhii\Modular\Module\FactoryInterface;
+use Mecha\Modular\Services\Value as TestSubject;
+use Mecha\Modular\FactoryInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use Psr\Container\ContainerInterface;

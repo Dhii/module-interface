@@ -1,10 +1,10 @@
 <?php
 
-namespace Dhii\Modular\Module\UnitTest\Services;
+namespace Mecha\Modular\UnitTest\Services;
 
-use Dhii\Modular\Module\ExtensionInterface;
-use Dhii\Modular\Module\Services\Extension as TestSubject;
-use Dhii\Modular\Module\Test\CallbackInterface;
+use Mecha\Modular\ExtensionInterface;
+use Mecha\Modular\Services\Extension as TestSubject;
+use Mecha\Modular\Test\CallbackInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use Psr\Container\ContainerInterface;

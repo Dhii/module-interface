@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Modular\Module\Services;
+namespace Mecha\Modular\Services;
 
-use Dhii\Modular\Module\ExtensionInterface;
+use Mecha\Modular\ExtensionInterface;
 use Psr\Container\ContainerInterface;
 
 class Extension extends AbstractService implements ExtensionInterface

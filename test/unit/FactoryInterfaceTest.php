@@ -1,9 +1,9 @@
 <?php
 
-namespace Dhii\Modular\UnitTest\Module;
+namespace Mecha\Modular\UnitTest;
 
-use Dhii\Modular\Module\FactoryInterface as TestSubject;
-use Dhii\Modular\Module\ServiceInterface;
+use Mecha\Modular\FactoryInterface as TestSubject;
+use Mecha\Modular\ServiceInterface;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
