@@ -8,9 +8,11 @@ use Psr\Container\ContainerInterface;
 /**
  * A factory implementation that returns an invocable function.
  *
- * The callback's arguments will be equivalent to the service instances that correspond with the `Invocable` instance's
- * dependency keys, in the order they are given. Those service are fetched only once when the `Invocable` is invoked and
- * the callback is returned, not when the _returned_ callback is invoked. They are then "cached" in the returned
+ * The callback's arguments will be equivalent to any invocation arguments first, followed by the service instances
+ * that correspond with the `Invocable` instance's dependency keys, in the order they are given.
+ *
+ * Those service are fetched only once when the `Invocable` is invoked and the callback is returned, not when the
+ * _returned_ callback is invoked. They are then "cached" in the returned
  * callback's scope.
  *
  * Example usage:
@@ -22,13 +24,13 @@ use Psr\Container\ContainerInterface;
  *      'service_b' => function () {
  *          return "world";
  *      },
- *      'service_c' => new Invocable(['service_a', 'service_b'], function ($a, $b) {
- *          return "$a $b";
+ *      'service_c' => new Invocable(['service_a', 'service_b'], function ($x, $a, $b) {
+ *          return "$x $a $b";
  *      })
  *  ]
  *
  *  $fn = $c->get('service_c');
- *  echo $fn(); // "hello world"
+ *  echo $fn('Yo!'); // "Yo! hello world"
  *  ```
  *
  * @since [*next-version*]
@@ -66,8 +68,8 @@ class Invocable extends AbstractService implements FactoryInterface
     {
         $deps = $this->resolveDependencies($c);
 
-        return function () use ($deps) {
-            return ($this->function)(...$deps);
+        return function (...$args) use ($deps) {
+            return ($this->function)(...$args, ...$deps);
         };
     }
 }

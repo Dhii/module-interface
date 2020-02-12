@@ -53,6 +53,9 @@ class InvocableTest extends TestCase
 
             $service1 = uniqid('service1');
             $service2 = uniqid('service2');
+
+            $arg1 = uniqid('arg1');
+            $arg2 = uniqid('arg2');
         }
         {
             $return = uniqid('return');
@@ -61,7 +64,7 @@ class InvocableTest extends TestCase
             $callback = $this->getMockForAbstractClass(CallbackInterface::class);
             $callback->expects(static::once())
                      ->method('__invoke')
-                     ->with($service1, $service2)
+                     ->with($arg1, $arg2, $service1, $service2)
                      ->willReturn($return);
         }
         {
@@ -79,6 +82,6 @@ class InvocableTest extends TestCase
         $result = $subject($container);
 
         static::assertInternalType('callable', $result);
-        static::assertSame($return, $result());
+        static::assertSame($return, $result($arg1, $arg2));
     }
 }
