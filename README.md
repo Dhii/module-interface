@@ -13,11 +13,11 @@ This package contains interfaces that are useful in describing modules and their
 - [`ModuleInterface`][] - The interface for a module. A module is an object that represents an
 application fragment. Modules are prepared using `setup()`, which returns a `ServiceProviderInterface` instance that
 the application may consume, and invoked using `run()`.
-
+ 
 ### Requirements
-- PHP: <= 7.0 | < 7.4
+- PHP: 7.1 and up, until 8.
 
-    Officially supports at least up to php 7.3.x. Should be compatible with PHP 7.x.
+    Officially supports at least up to php 7.4.x.
 
 
 [Dhii]: https://github.com/Dhii/dhii
