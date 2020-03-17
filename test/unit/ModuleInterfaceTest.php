@@ -3,7 +3,7 @@
 namespace Dhii\Modular\UnitTest\Module;
 
 use Dhii\Modular\Module\ModuleInterface as TestSubject;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\MockObject\MockObject as MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -18,7 +18,7 @@ class ModuleInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @return TestSubject|MockObject
+     * @return TestSubject&MockObject
      */
     public function createInstance()
     {

@@ -3,8 +3,10 @@
 namespace Dhii\Modular\UnitTest\Exception;
 
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
+use Dhii\Modular\Module\ModuleAwareInterface;
 use Dhii\Modular\Module\Test\GetImplementingMockBuilderCapableTrait;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use Exception;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,11 +23,11 @@ class ModuleExceptionInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @return TestSubject|MockObject
+     * @return TestSubject&MockObject
      */
     public function createInstance()
     {
-        $mock = $this->getImplementingMockBuilder('Exception', [TestSubject::class])
+        $mock = $this->getImplementingMockBuilder(Exception::class, [TestSubject::class])
             ->setMethods([])
             ->getMock();
 
@@ -48,7 +50,7 @@ class ModuleExceptionInterfaceTest extends TestCase
         );
 
         $this->assertInstanceOf(
-            'Dhii\Modular\Module\ModuleAwareInterface',
+            ModuleAwareInterface::class,
             $subject,
             'Subject does not implement required interface'
         );

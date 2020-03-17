@@ -18,7 +18,7 @@ class ModuleAwareInterfaceTest extends TestCase
      *
      * @since [*next-version*]
      *
-     * @return TestSubject|MockObject
+     * @return TestSubject&MockObject
      */
     public function createInstance()
     {
