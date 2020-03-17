@@ -2,11 +2,11 @@
 
 namespace Dhii\Modular\Module\Test;
 
+use PHPUnit\Framework\MockObject\MockBuilder;
 use Throwable;
 use Exception;
 use Error;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockBuilder as MockBuilder;
 
 /**
  * Eases development of tests by allowing creation of more complex mocks.
@@ -42,5 +42,5 @@ trait GetImplementingMockBuilderCapableTrait
      * @param string $className
      * @return MockBuilder The builder.
      */
-    abstract public function getMockBuilder($className);
+    abstract public function getMockBuilder($className): MockBuilder;
 }
