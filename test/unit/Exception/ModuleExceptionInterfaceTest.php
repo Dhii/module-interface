@@ -50,6 +50,12 @@ class ModuleExceptionInterfaceTest extends TestCase
         );
 
         $this->assertInstanceOf(
+            'Throwable',
+            $subject,
+            'Exception must be throwable'
+        );
+
+        $this->assertInstanceOf(
             ModuleAwareInterface::class,
             $subject,
             'Subject does not implement required interface'
