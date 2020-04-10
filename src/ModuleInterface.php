@@ -9,7 +9,7 @@ use Psr\Container\ContainerInterface;
 /**
  * Something that represents an application module.
  *
- * @since [*next-version*]
+ * @since 0.2
  */
 interface ModuleInterface
 {
@@ -25,7 +25,7 @@ interface ModuleInterface
      * existence of other module's services. Use proxy services together with {@link ContainerInterface::has()} for
      * optionally integrating with other modules.
      *
-     * @since [*next-version*]
+     * @since 0.2
      *
      * @return ServiceProviderInterface A service provider instance for this module's services.
      *
@@ -42,7 +42,7 @@ interface ModuleInterface
      * the same instance given to other modules. As such, it is strongly advised to assume it is not, and to avoid
      * referencing services from other modules.
      *
-     * @since [*next-version*]
+     * @since 0.2
      *
      * @param ContainerInterface $c A services container instance.
      *

@@ -8,7 +8,7 @@ use Throwable;
 /**
  * Represents an exception that is thrown in relation to a module.
  *
- * @since [*next-version*]
+ * @since 0.2
  */
 interface ModuleExceptionInterface extends
     Throwable,
