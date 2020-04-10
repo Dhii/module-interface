@@ -3,7 +3,8 @@
 namespace Dhii\Modular\UnitTest\Module;
 
 use Dhii\Modular\Module\ModuleAwareInterface as TestSubject;
-use Xpmock\TestCase;
+use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests {@see TestSubject}.
@@ -13,24 +14,16 @@ use Xpmock\TestCase;
 class ModuleAwareInterfaceTest extends TestCase
 {
     /**
-     * The name of the test subject.
-     *
-     * @since [*next-version*]
-     */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\ModuleAwareInterface';
-
-    /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return TestSubject
+     * @return TestSubject&MockObject
      */
     public function createInstance()
     {
-        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getModule()
-            ->new();
+        $mock = $this->getMockBuilder(TestSubject::class)
+            ->getMock();
 
         return $mock;
     }
@@ -45,7 +38,7 @@ class ModuleAwareInterfaceTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(
-            static::TEST_SUBJECT_CLASSNAME,
+            TestSubject::class,
             $subject,
             'A valid instance of the test subject could not be created'
         );

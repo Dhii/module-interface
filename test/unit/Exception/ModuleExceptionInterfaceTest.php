@@ -3,7 +3,11 @@
 namespace Dhii\Modular\UnitTest\Exception;
 
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
-use Xpmock\TestCase;
+use Dhii\Modular\Module\ModuleAwareInterface;
+use Dhii\Modular\Module\Test\GetImplementingMockBuilderCapableTrait;
+use Exception;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests {@see TestSubject}.
@@ -12,34 +16,20 @@ use Xpmock\TestCase;
  */
 class ModuleExceptionInterfaceTest extends TestCase
 {
-    /**
-     * The name of the test subject.
-     *
-     * @since [*next-version*]
-     */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\Modular\Module\Exception\ModuleExceptionInterface';
+    use GetImplementingMockBuilderCapableTrait;
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next-version*]
      *
-     * @return TestSubject
+     * @return TestSubject&MockObject
      */
     public function createInstance()
     {
-        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getMessage()
-            ->getCode()
-            ->getPrevious()
-            ->getFile()
-            ->getLine()
-            ->getTrace()
-            ->getTraceAsString()
-            ->__toString()
-
-            ->getModule()
-            ->new();
+        $mock = $this->getImplementingMockBuilder(Exception::class, [TestSubject::class])
+            ->setMethods([])
+            ->getMock();
 
         return $mock;
     }
@@ -54,13 +44,19 @@ class ModuleExceptionInterfaceTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(
-            static::TEST_SUBJECT_CLASSNAME,
+            TestSubject::class,
             $subject,
             'A valid instance of the test subject could not be created'
         );
 
         $this->assertInstanceOf(
-            'Dhii\Modular\Module\ModuleAwareInterface',
+            'Throwable',
+            $subject,
+            'Exception must be throwable'
+        );
+
+        $this->assertInstanceOf(
+            ModuleAwareInterface::class,
             $subject,
             'Subject does not implement required interface'
         );
