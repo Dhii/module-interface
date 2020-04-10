@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" packagePrefix="Dhii\Modular\Module\UnitTest\" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Dhii\Modular\Module\" />
       <sourceFolder url="file://$MODULE_DIR$/test/stubs" isTestSource="true" packagePrefix="Dhii\Modular\Module\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/test/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
