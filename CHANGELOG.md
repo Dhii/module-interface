@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+### Changed
+- **BC Breaking** - The return type of `ModuleInterface#run()` is now `void`.
+    This will break any subtypes that did not declare a return type,
+    because `void` is more specific than `mixed`.
 
 ## [0.2.0-alpha1] - 2020-04-10
 ### Changed

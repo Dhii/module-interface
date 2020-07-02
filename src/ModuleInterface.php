@@ -48,5 +48,5 @@ interface ModuleInterface
      *
      * @throws ModuleExceptionInterface If the module failed to run.
      */
-    public function run(ContainerInterface $c);
+    public function run(ContainerInterface $c): void;
 }
