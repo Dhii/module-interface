@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [[*next-version*]] - YYYY-MM-DD
 ### Added
 - Support for PHP 8.
+- **BC-breaking**: `ModuleInterface#run()` now declares `void` return type.
 
 ## [0.2.0-alpha1] - 2020-04-10
 ### Changed
