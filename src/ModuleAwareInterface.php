@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dhii\Modular\Module;
 
 /**
@@ -16,5 +18,5 @@ interface ModuleAwareInterface
      *
      * @return ModuleInterface|null The module, if applicable; otherwise, null.
      */
-    public function getModule();
+    public function getModule(): ?ModuleInterface;
 }
