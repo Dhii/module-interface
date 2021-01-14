@@ -29,7 +29,6 @@
 
     <extraFiles>
         <ignoreFiles>
-            <directory name="vendor/phpunit/php-code-coverage/tests"/>
             <directory name="vendor/phpspec/prophecy"/>
         </ignoreFiles>
     </extraFiles>
