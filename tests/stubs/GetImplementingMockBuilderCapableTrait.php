@@ -39,8 +39,10 @@ trait GetImplementingMockBuilderCapableTrait
     /**
      * Retrieves a mock builder for the specified classname.
      *
-     * @param string $className
+     * @param string $className Name of the class/interface/trait to build a mock for.
      * @return MockBuilder The builder.
      */
-    abstract public function getMockBuilder($className): MockBuilder;
+    // The below declaration is commented out becaue it's impossible
+    // to make it compatible with both PHPUnit 7 and 9.
+    //abstract public function getMockBuilder(string $className): MockBuilder;
 }
