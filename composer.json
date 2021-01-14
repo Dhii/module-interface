@@ -12,12 +12,14 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.1",
+        "php": "^7.1 | ^8.0",
         "psr/container": "^1.0",
         "container-interop/service-provider": "^0.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0 | ^7.0"
+        "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
+        "vimeo/psalm": "^3.11.7 | ^4.0",
+        "slevomat/coding-standard": "^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -26,9 +28,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Dhii\\Modular\\Module\\UnitTest\\": "test/unit",
-            "Dhii\\Modular\\Module\\FuncTest\\": "test/functional",
-            "Dhii\\Modular\\Module\\Test\\": "test/stubs"
+            "Dhii\\Modular\\Module\\UnitTest\\": "tests/unit",
+            "Dhii\\Modular\\Module\\Test\\": "tests/stubs"
         }
     },
     "scripts": {

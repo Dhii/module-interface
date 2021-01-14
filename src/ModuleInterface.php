@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dhii\Modular\Module;
 
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface;
@@ -31,7 +33,7 @@ interface ModuleInterface
      *
      * @throws ModuleExceptionInterface If module setup failed and/or a service provider instance could not be returned.
      */
-    public function setup() : ServiceProviderInterface;
+    public function setup(): ServiceProviderInterface;
 
     /**
      * Runs the module.
@@ -48,5 +50,5 @@ interface ModuleInterface
      *
      * @throws ModuleExceptionInterface If the module failed to run.
      */
-    public function run(ContainerInterface $c);
+    public function run(ContainerInterface $c): void;
 }

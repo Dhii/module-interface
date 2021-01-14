@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\UnitTest\Exception;
+namespace Dhii\Modular\Module\UnitTest\Exception;
 
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface as TestSubject;
 use Dhii\Modular\Module\ModuleAwareInterface;

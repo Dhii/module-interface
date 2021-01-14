@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dhii\Modular\Module\Exception;
 
 use Dhii\Modular\Module\ModuleAwareInterface;
