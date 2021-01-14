@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Modular\UnitTest\Module;
+namespace Dhii\Modular\Module\UnitTest;
 
 use Dhii\Modular\Module\ModuleAwareInterface as TestSubject;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
