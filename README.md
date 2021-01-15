@@ -89,7 +89,7 @@ return function () {
          * 
          * @param ContainerInterface $c A container with the services of all modules.
          */
-        public function run(ContainerInterface $c)
+        public function run(ContainerInterface $c): void
         {
             $myService = $c->get('my_module/my_service');
             $myService->doSomething();
