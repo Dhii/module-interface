@@ -1,17 +1,14 @@
 # Dhii - Module Interface
 
-[![Build Status](https://travis-ci.org/Dhii/module-interface.svg?branch=develop)](https://travis-ci.org/Dhii/module-interface)
-[![Code Climate](https://codeclimate.com/github/Dhii/module-interface/badges/gpa.svg)](https://codeclimate.com/github/Dhii/module-interface)
-[![Test Coverage](https://codeclimate.com/github/Dhii/module-interface/badges/coverage.svg)](https://codeclimate.com/github/Dhii/module-interface/coverage)
+[![Continuous Integration](https://github.com/Dhii/module-interface/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/Dhii/module-interface/actions/workflows/continuous-integration.yml)
 [![Latest Stable Version](https://poser.pugx.org/dhii/module-interface/version)](https://packagist.org/packages/dhii/module-interface)
+[![Latest Unstable Version](https://poser.pugx.org/dhii/module-interface/v/unstable)](//packagist.org/packages/dhii/module-interface)
 
 ## Details
 This package contains interfaces that are useful in describing modules and their attributes and behaviour.
  
 ### Requirements
-- PHP: 7.1 and up, until 8.
-
-    Officially supports at least up to php 7.4.x.
+- PHP: 7.1 and up, until 8 inclusive,
 
 ### Interfaces
 - [`ModuleInterface`][] - The interface for a module. A module is an object that represents an
