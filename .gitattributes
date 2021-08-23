@@ -7,5 +7,7 @@ nbproject export-ignore
 .gitignore export-ignore
 composer.lock export-ignore
 phpunit.xml export-ignore
+docker export-ignore
+.idea export-ignore
 
 * text eol=lf
