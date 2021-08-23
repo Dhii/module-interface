@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.3.0-alpha2] - 2021-08-23
+### Fixed
+- The name of the `tests` folder to be ignored by Git while archiving.
+This results in a smaller dist, without the tests.
+
 ## [0.3.0-alpha1] - 2021-01-14
 ### Added
 - Support for PHP 8.
