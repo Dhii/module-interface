@@ -8,8 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.0-alpha2] - 2021-08-23
 ### Fixed
-- The name of the `tests` folder to be ignored by Git while archiving.
-This results in a smaller dist, without the tests.
+- Revised ignore list for `git archive`. Dist now only contains what is necessary.
 
 ## [0.3.0-alpha1] - 2021-01-14
 ### Added
