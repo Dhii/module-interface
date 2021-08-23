@@ -1,4 +1,4 @@
-test export-ignore
+tests export-ignore
 nbproject export-ignore
 .codeclimate.yml export-ignore
 .php_cs export-ignore
