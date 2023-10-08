@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1 | ^8.0",
-        "psr/container": "^1.0"
+        "psr/container": "^1.0 | ^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
@@ -38,6 +38,11 @@
     "extra": {
         "branch-alias": {
             "dev-develop": "0.3.x-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
