@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+### Changed
+- Dropped `container-interop/service-provider` as a dependency and ported `ServiceProviderInterface` into this package.
 
 ## [0.3.0-alpha2] - 2021-08-23
 ### Fixed
