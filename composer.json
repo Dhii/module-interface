@@ -13,8 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1 | ^8.0",
-        "psr/container": "^1.0",
-        "container-interop/service-provider": "^0.4"
+        "psr/container": "^1.0 | ^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
@@ -23,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Dhii\\Modular\\Module\\": "src"
+            "Dhii\\Modular\\Module\\": "src",
+            "Interop\\Container\\": "inc/service-provider"
         }
     },
     "autoload-dev": {
@@ -38,6 +38,11 @@
     "extra": {
         "branch-alias": {
             "dev-develop": "0.3.x-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
